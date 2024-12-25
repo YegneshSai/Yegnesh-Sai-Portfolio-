@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      href="/style.css"
+      rel="stylesheet"
+    /> -->
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <title>Yegnesh Sai</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #2E3033;
+  --primary-color-dark: #59606E;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #16123f;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.section {
+  background-image:url("background.jpg");
+}
+
+.section__container {
+  min-height: 100vh;
+  
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 4rem;
+  margin-top: 15vh;
+}
+/*  */
+/*  */
+/* Experience Section */
+/* Card Styling */
+.card {
+            border: none;
+            border-radius: 20px; /* Curvy border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+            max-width: 100%; /* Ensure cards take full width */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 20px 20px 0 0; /* Match the border radius */
+        }
+        .card-body {
+            padding: 15px;
+            overflow: hidden; /* Prevent body content overflow */
+        }
+        .card-title {
+            font-size: 1.1rem; /* Decrease font size */
+            font-weight: 500;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            color:#000;
+        }
+        .btn-custom {
+            background-color: #007bff; /* Primary color */
+            color: #fff;
+            border: none;
+            border-radius: 20px; /* Curvy button */
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            margin-top: 10px; /* Space above the button */
+        }
+        .btn-custom:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        .tech-list {
+            padding-left: 20px; /* Indent the bullet points */
+            font-size: 0.9rem; /* Decrease font size for tech list */
+            color: #fff; /* Set bullet point color */
+            list-style-type: disc; /* Use disc bullet points */
+        }
+        /* Style for bullet points */
+        .tech-list li {
+            margin-bottom: 5px; /* Space between bullet points */
+        }
+        .card-container {
+            max-width: 800px; /* Limit the max width for better appearance */
+            margin: auto; /* Center align the cards */
+        }
+    </style>
+    
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">YEGNESH SAI</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./experience.html">Experience</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./profiles.html">Profiles</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <section id="experience">
+            <div class="container">
+                <h1 class="h3 mb-4"></h1>
+                <div id="projects" class="card-container"></div>
+            </div>
+            <script>
+                const projects = [
+                    {
+                        title: "EyeHear: Object Detection Model for the Visually Impaired",
+                        description: "A deep learning model that identifies objects in front of the camera using the YOLO v3 algorithm. The output, including distance and direction, is produced in voice format to assist visually impaired individuals. The model can identify 80 everyday objects.",
+                        technologies: ["Python", "YOLO v3", "Jupyter Notebook", "COCO datasets", "OpenCV"],
+                        role: "Developed and trained the object detection model, implemented voice output features, and integrated real-time detection with a camera.",
+                        outcome: "Successfully demonstrated the model's ability to assist visually impaired users in navigating their environment by identifying objects and providing auditory feedback.",
+                        link: "https://github.com/YegneshSai/EyeHear",
+                        color: "#ffffff" // Muted teal color for the card header
+                    },
+                    {
+                        title: "Portfolio",
+                        description: "A personal portfolio website designed to showcase my career achievements and projects, providing an overview of my skills and experiences.",
+                        technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+                        role: "Designed and developed the website layout and user interface, implemented responsive design, and integrated interactive elements to enhance user experience.",
+                        outcome: "Successfully created an accessible and visually appealing platform to present my work to potential employers and clients.",
+                        link: "./index.html",
+                        color: "#ffffff" // Soft blue color for the card header
+                    },
+                    {
+                        title: "RR Game",
+                        description: "A mathematics calculation game where users must provide quick answers before the questions scroll down off the screen. The difficulty of calculations and scrolling speed increases with each level, with scores recorded in the user's database.",
+                        technologies: ["HTML", "CSS", "JavaScript", "JDBC", "MySQL", "JSP"],
+                        role: "Designed and developed the game interface, implemented the game logic for question generation and scoring, and created the backend to manage user data and scores.",
+                        outcome: "Successfully created an engaging and challenging game that enhances users' mathematical skills and reaction times while tracking performance over time.",
+                        link: "https://github.com/YegneshSai/RR-Game",
+                        color: "#ffffff" // Warm yellow color for the card header
+                    },
+                    {
+                        title: "Contest Website",
+                        description: "A social media platform allowing users to log in with their credentials and post quotes. Users can like posts, with the most liked posts displayed at the top. Posts are categorized based on global, daily, and event-specific themes.",
+                        technologies: ["Python", "Flask", "HTML", "CSS", "JavaScript", "AWS RDBMS"],
+                        role: "Designed the website backend using Flask, implemented user authentication, and designed the database schema for storing posts and likes. Created the front-end interface for user interaction.",
+                        outcome: "Successfully launched a user-friendly platform that promotes engagement through quote sharing and interaction, with a dynamic display of popular content.",
+                        link: "https://github.com/YegneshSai/contest",
+                        color: "#ffffff" // Soft red color for the card header
+                    },
+                    {
+                        title: "Fire Fighting Robot",
+                        description: "A robotic system designed to identify fire in its vicinity, navigate towards it, and extinguish the flames by spraying water. This project was developed as part of a five-member team.",
+                        technologies: ["Arduino Uno", "L293D", "Servo Motor"],
+                        role: "Built the robot and developed the code for fire detection, navigation, and the water spraying mechanism, ensuring effective functionality.",
+                        outcome: "Successfully created an accessible and visually appealing platform to present my work to potential employers and clients.",
+                        link: "https://github.com/YegneshSai/Fire-Fighting-Robot-using-arduino-uno",
+                        color: "#ffffff" // Dark gray color for the card header
+                    },
+                    {
+                        title: "SAP Analytics Cloud Developer",
+                        description: "Developed and implemented planning systems for financial planning using SAP Analytics Cloud (SAC). Created analytical applications for planning, reporting, and dashboards to support business decision-making.",
+                        technologies: ["SAP Analytics Cloud", "JavaScript", "HTML", "CSS", "SAP S/4HANA"],
+                        role: "Designed and coded data actions for data manipulation in planning processes, optimizing operational efficiency. Integrated custom widgets into SAC by developing them outside the platform, enhancing the visualization and functionality of dashboards.",
+                        outcome: "Collaborated with cross-functional teams to understand business requirements and translate them into technical solutions.",
+                        link: "#", // Add a relevant link if needed
+                        color: "#ffffff" // Charcoal color for the card header
+                    }
+                ];
+        
+                const projectsContainer = document.getElementById("projects");
+        
+                projects.forEach(project => {
+                    const projectCard = document.createElement("div");
+        
+                    projectCard.innerHTML = `
+                        <div class="card" style="background-color: ${project.color};">
+                            <div class="card-header">
+                                <h5 class="card-title">${project.title}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p style="font-size: 0.9rem;">${project.description}</p>
+                                <p style="font-size: 0.9rem;"><strong>Technologies Used:</strong></p>
+                                <ul class="tech-list">
+                                    ${project.technologies.map(tech => `<li>${tech}</li>`).join('')}
+                                </ul>
+                                <a href="${project.link}" class="btn btn-custom">View Project</a>
+                            </div>
+                        </div>
+                    `;
+        
+                    projectsContainer.appendChild(projectCard);
+                });
+            </script>
+            
+            
+        </section>
+      </div>
+    </section>
+  </body>
+</html>
